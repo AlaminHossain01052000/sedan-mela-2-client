@@ -23,7 +23,7 @@ const Purchase = () => {
         if (user && choosedProduct) {
 
             const purchasingInfo = {
-                displayName: user.displayName, email: user.email, ...data, status: "pending", productName: choosedProduct.name, productId: choosedProduct._id, productInfo: { ...choosedProduct }
+                displayName: user.displayName, email: user.email, ...data, status: "pending", productName: choosedProduct.name, productId: choosedProduct._id, productInfo: { ...choosedProduct },paymentStatus:'pending'
             };
 
             fetch(`http://localhost:5000/purchasedSedan`, {

@@ -1,15 +1,44 @@
-import { Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Modal, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useState } from 'react';
 
 import "./ViewOrder.css";
+
+//stripe.js
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import PaymentForm from '../PaymentForm/PaymentForm';
+const stripePromise = loadStripe('pk_test_51JvnacKB2JOo4D0XAUdhDzZ6TqtmGp2vpGMIXXSxtPKBJOo1cmcb3SlAga09S4J9nyLpCgs4dEyJ126BbM8sE1mm00BCQsgnSt');
+
+
 const ViewOrder = ({ order }) => {
 
 
-    const { img, name, engine, fuelType, gear, gearType, price } = order.productInfo;
-
+    const { img, name, engine, fuelType, gear, gearType, price, } = order.productInfo;
     const orderId = order._id;
+    const [orderDetails,setOrderDetails]=useState({});
 
+    //modal handler
+    const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+    setOrderDetails(order);
+  }
+  const handleClose = () => setOpen(false);
+
+//   modal style
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    backgroundColor: 'white',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+    
     const handleDeletingOrder = () => {
         const confirmDeleting = window.confirm("Are You Sure Want To Delete ?");
         if (confirmDeleting) {
@@ -64,11 +93,47 @@ const ViewOrder = ({ order }) => {
                         Status:{order.status}
                     </Typography>
                 </CardContent>
+                {
+                    order?.paymentStatus==='pending'&&
+                    <button className="btn-delete" onClick={handleDeletingOrder} style={{marginBottom:"10px",paddingBottom:"50px"}}>Delete</button>
+                }
+               
                 <CardActions>
-                    <button className="btn-delete" onClick={handleDeletingOrder}>Delete</button>
+                    {
+                        (order?.paymentStatus==='pending'||order.paymentStatus==='undefined')?
+                        <Button  variant="contained" style={{marginTop:"20px",margin:"auto"}} onClick={handleOpen}>Pay</Button>
+                        
+                        :
+                        <Button variant="contained" style={{margin:"auto"}} disabled>Paid</Button>
+                    }
+                    
+
+                </CardActions>
+                <CardActions>
+                    
+                    
 
                 </CardActions>
             </Card>
+
+            {/* ======modal start====== */}
+            <div>
+      {/* <Button onClick={handleOpen}>Open modal</Button> */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box style={modalStyle}>
+            <Elements stripe={stripePromise}>
+                <PaymentForm amount={order.productInfo.price} handleClose={handleClose} order={order}/>
+            </Elements>
+        </Box>
+        
+      </Modal>
+            </div>
+        {/* ======Modal End====== */}
         </Grid>
     );
 };

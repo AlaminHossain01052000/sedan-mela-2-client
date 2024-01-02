@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import ViewOrder from '../ViewOrder/ViewOrder';
 
 
+
 const MyOrders = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
@@ -27,6 +28,9 @@ const MyOrders = () => {
                     </ViewOrder>)
                 }
             </Grid>
+            {/* <Elements stripe={stripePromise}>
+                <PaymentForm />
+            </Elements> */}
         </div>
     );
 };
