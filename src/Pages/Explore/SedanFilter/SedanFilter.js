@@ -1,6 +1,7 @@
+import { Button } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-
-const SedanFilter = ({ setSedans }) => {
+import './SedanFilter.css'
+const SedanFilter = ({ setQueryParams,clearAll,setClearAll }) => {
   const [filters, setFilters] = useState({
     engine: [],
     gear: [],
@@ -14,7 +15,19 @@ const SedanFilter = ({ setSedans }) => {
   const [gearOptions, setGearOptions] = useState([]);
   const [gearTypeOptions, setGearTypeOptions] = useState([]);
   const [fuelTypeOptions, setFuelTypeOptions] = useState([]);
-
+  useEffect(()=>{
+    if(clearAll){
+      setFilters({
+        engine: [],
+    gear: [],
+    gearType: [],
+    fuelType: [],
+    minPrice: '',
+    maxPrice: '',
+      })
+      setClearAll(false)
+    }
+  },[clearAll,setClearAll])
   useEffect(() => {
     // Fetch unique engine options
     fetch('http://localhost:5000/sedans/engines')
@@ -52,57 +65,147 @@ const SedanFilter = ({ setSedans }) => {
     setFilters((prevFilters) => ({ ...prevFilters, [name]: selectedOptions }));
   };
 
+  const clearFilter = (filterName) => {
+    setFilters((prevFilters) => ({ ...prevFilters, [filterName]: [] }));
+  };
+
   const applyFilters = () => {
     // Use fetch to send a GET request with the filters to the server
     const queryParams = new URLSearchParams(filters).toString();
-    fetch(`http://localhost:5000/sedans?${queryParams}`)
-      .then(response => response.json())
-      .then(data => setSedans(data))
-      .catch(error => console.error('Error fetching filtered sedans:', error));
+  
+    setQueryParams(queryParams)
+   
   };
+  // applyFilters()
 
   return (
-    <div>
-      <h2>Filter Sedans</h2>
-      <div>
-        <label>Engine:</label>
-        <select multiple name="engine" value={filters.engine} onChange={handleMultiSelectChange}>
+    <div className="container mt-3">
+      <h2>Filter</h2>
+
+      {/* Engine */}
+      <div className="mb-3">
+        <label className="form-label font-roboto">Engine:</label>
+        <select className='form-select font-roboto' 
+          multiple
+          name="engine"
+          value={filters.engine}
+          onChange={handleMultiSelectChange}
+        >
           {engineOptions.map(engine => (
-            <option key={engine} value={engine}>{engine}</option>
+            <option className='font-roboto' key={engine} value={engine} >{engine}</option>
           ))}
         </select>
+        {filters.engine.length > 0 &&
+          <Button
+            variant="outlined"
+            style={{margin:"10px"}}
+            onClick={() => clearFilter('engine')}
+          >
+            Clear
+          </Button>
+        }
       </div>
-      <div>
-        <label>Gear:</label>
-        <select multiple name="gear" value={filters.gear} onChange={handleMultiSelectChange}>
+
+      {/* Gear */}
+      <div className="mb-3">
+        <label className="form-label font-roboto">Gear:</label>
+        <select className='form-select font-roboto' 
+          multiple
+          name="gear"
+          value={filters.gear}
+          onChange={handleMultiSelectChange}
+        >
           {gearOptions.map(gear => (
-            <option key={gear} value={gear}>{gear}</option>
+            <option className='font-roboto' key={gear} value={gear}>{gear}</option>
           ))}
         </select>
+        {filters.gear.length > 0 &&
+          <Button
+          variant="outlined"
+          style={{margin:"10px"}}
+            onClick={() => clearFilter('gear')}
+          >
+            Clear
+          </Button>
+        }
       </div>
-      <div>
-        <label>Gear Type:</label>
-        <select multiple name="gearType" value={filters.gearType} onChange={handleMultiSelectChange}>
+
+      {/* Gear Type */}
+      <div className="mb-3">
+        <label className="form-label font-roboto">Gear Type:</label>
+        <select className='form-select font-roboto' 
+          multiple
+          name="gearType"
+          value={filters.gearType}
+          onChange={handleMultiSelectChange}
+        >
           {gearTypeOptions.map(gearType => (
-            <option key={gearType} value={gearType}>{gearType}</option>
+            <option className='font-roboto' key={gearType} value={gearType}>{gearType}</option>
           ))}
         </select>
+        {filters.gearType.length > 0 &&
+          <Button
+          variant="outlined"
+          style={{margin:"10px"}}
+            onClick={() => clearFilter('gearType')}
+          >
+            Clear
+          </Button>
+        }
       </div>
-      <div>
-        <label>Fuel Type:</label>
-        <select multiple name="fuelType" value={filters.fuelType} onChange={handleMultiSelectChange}>
+
+      {/* Fuel Type */}
+      <div className="mb-3">
+        <label className="form-label font-roboto">Fuel Type:</label>
+        <select className='form-select font-roboto' 
+          multiple
+          name="fuelType"
+          value={filters.fuelType}
+          onChange={handleMultiSelectChange}
+        >
           {fuelTypeOptions.map(fuelType => (
-            <option key={fuelType} value={fuelType}>{fuelType}</option>
+            <option className='font-roboto' key={fuelType} value={fuelType}>{fuelType}</option>
           ))}
         </select>
+        {filters.fuelType.length > 0 &&
+          <Button
+          variant="outlined"
+          style={{margin:"10px"}}
+            onClick={() => clearFilter('fuelType')}
+          >
+            Clear
+          </Button>
+        }
       </div>
-      <div>
-        <label>Price Range:</label>
-        <input type="number" name="minPrice" placeholder="Min" value={filters.minPrice} onChange={handleInputChange} />
-        <input type="number" name="maxPrice" placeholder="Max" value={filters.maxPrice} onChange={handleInputChange} />
+
+      {/* Price Range */}
+      <div style={{display:"flex",flexDirection:'column',marginTop:"20px"}}>
+        <label className="form-label font-roboto">Price Range:</label>
+        <input
+          type="number"
+          className="form-control"
+          name="minPrice"
+          placeholder="Min"
+          value={filters.minPrice}
+          onChange={handleInputChange}
+          style={{borderRadius:"10px",padding:"10px",borderWidth:"3px",borderColor:"blue",marginBottom:"20px",marginTop:"10px"}}
+        />
+        <input
+          type="number"
+          className="form-control"
+          name="maxPrice"
+          placeholder="Max"
+          value={filters.maxPrice}
+          onChange={handleInputChange}
+          style={{borderRadius:"10px",padding:"10px",borderWidth:"3px",borderColor:"blue"}}
+          
+        />
       </div>
-      <button onClick={applyFilters}>Apply Filters</button>
-      
+      <Button variant="contained" onClick={applyFilters}
+      style={{marginTop:"20px"}}
+      >Apply</Button>
+
+    
     </div>
   );
 };
