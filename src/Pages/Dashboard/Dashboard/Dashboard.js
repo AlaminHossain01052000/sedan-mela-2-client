@@ -14,8 +14,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 import { Link,  useLocation } from 'react-router-dom';
-
-import MyOrders from '../MyOrders/MyOrders';
 import useAuth from '../../hooks/useAuth';
 
 import MakeAdmin from '../MakeAdmin/MakeAdmin';

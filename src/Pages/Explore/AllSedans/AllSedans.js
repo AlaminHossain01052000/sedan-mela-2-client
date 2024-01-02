@@ -1,16 +1,18 @@
 import { Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SedanCard from '../SedanCard/SedanCard';
+import SedanFilter from '../SedanFilter/SedanFilter';
 
 const AllSedans = () => {
     const [sedans, setSedans] = useState([]);
-    useEffect(() => {
-        fetch("http://localhost:5000/sedans")
-            .then(res => res.json())
-            .then(data => setSedans(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/sedans")
+    //         .then(res => res.json())
+    //         .then(data => setSedans(data))
+    // }, [])
     return (
         <div style={{ marginTop: "100px" }}>
+            <SedanFilter setSedans={setSedans}/>
             <Container>
                 <Grid container spacing={2}>
                     {

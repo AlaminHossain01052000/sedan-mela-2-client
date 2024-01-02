@@ -42,9 +42,6 @@ const SedanCard = ({ sedan }) => {
                         Fuel Type:{fuelType}
                     </Typography>
 
-                    <Typography className="sedan-description" variant={'h6'}>
-                        Fuel Type:{fuelType}
-                    </Typography>
                 </CardContent>
                 <CardActions>
                     <Button onClick={handlePurchasing}
