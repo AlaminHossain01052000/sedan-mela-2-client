@@ -28,7 +28,7 @@ const useFirebase = () => {
 
                 });
 
-                fetch("http://localhost:5000/users", {
+                fetch("https://sedan-mela-2-server.onrender.com/users", {
                     method: "PUT",
                     headers: {
                         "content-type": "application/json"
@@ -71,7 +71,7 @@ const useFirebase = () => {
                 setError("");
                 const newUser = { displayName: result.user.displayName, email: result.user.email };
 
-                fetch("http://localhost:5000/users", {
+                fetch("https://sedan-mela-2-server.onrender.com/users", {
                     method: "PUT",
                     headers: {
                         "content-type": "application/json"
@@ -101,7 +101,7 @@ const useFirebase = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:5000/users/admin?email=${user.email}`)
+        fetch(`https://sedan-mela-2-server.onrender.com/users/admin?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)

@@ -15,7 +15,7 @@ const ManageAllOrders = () => {
     const [purchasedProducts, setPurchaseProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/purchasedSedan/All")
+        fetch("https://sedan-mela-2-server.onrender.com/purchasedSedan/All")
             .then(res => res.json())
             .then(data => {
                 setPurchaseProducts(data);
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
     }, [purchasedProducts])
     const handleUpdateStatus = (id) => {
 
-        fetch(`http://localhost:5000/purchasedSedan/All/${id}`, {
+        fetch(`https://sedan-mela-2-server.onrender.com/purchasedSedan/All/${id}`, {
             method: "PUT"
         })
             .then(res => res.json())
@@ -38,7 +38,7 @@ const ManageAllOrders = () => {
     const handleDeleteOrder = (id) => {
         const confirm = window.confirm("Are You Sure Want To Delete ? ");
         if (confirm) {
-            fetch(`http://localhost:5000/purchasedSedan/All/${id}`, {
+            fetch(`https://sedan-mela-2-server.onrender.com/purchasedSedan/All/${id}`, {
                 method: "Delete"
             })
                 .then(res => res.json())

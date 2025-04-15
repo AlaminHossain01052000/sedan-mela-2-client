@@ -26,7 +26,7 @@ const Purchase = () => {
                 displayName: user.displayName, email: user.email, ...data, status: "pending", productName: choosedProduct.name, productId: choosedProduct._id, productInfo: { ...choosedProduct },paymentStatus:'pending'
             };
 
-            fetch(`http://localhost:5000/purchasedSedan`, {
+            fetch(`https://sedan-mela-2-server.onrender.com/purchasedSedan`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -46,7 +46,7 @@ const Purchase = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/sedan/${id}`)
+        fetch(`https://sedan-mela-2-server.onrender.com/sedan/${id}`)
             .then(res => res.json())
             .then(data => setChoosedProduct(data))
     }, [id, user])

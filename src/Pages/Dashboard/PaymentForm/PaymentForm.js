@@ -46,7 +46,7 @@ const [error,setError]=useState("")
       if(paymentMethod.id){
         try {
             console.log(order._id)
-            const response = await fetch(`http://localhost:5000/purchasedSedan/paymentStatus/${order._id}`, {
+            const response = await fetch(`https://sedan-mela-2-server.onrender.com/purchasedSedan/paymentStatus/${order._id}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',

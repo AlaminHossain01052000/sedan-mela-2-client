@@ -12,7 +12,7 @@ const AddAProduct = () => {
     }
     const handleProductAdding = (e) => {
         e.preventDefault();
-        fetch("http://localhost:5000/sedans", {
+        fetch("https://sedan-mela-2-server.onrender.com/sedans", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

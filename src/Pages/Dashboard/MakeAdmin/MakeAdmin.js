@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const handleMakingAdmin = e => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/users?email=${email}`, {
+        fetch(`https://sedan-mela-2-server.onrender.com/users?email=${email}`, {
             method: "PUT"
 
         })

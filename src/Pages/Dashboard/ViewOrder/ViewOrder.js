@@ -42,7 +42,7 @@ const ViewOrder = ({ order }) => {
     const handleDeletingOrder = () => {
         const confirmDeleting = window.confirm("Are You Sure Want To Delete ?");
         if (confirmDeleting) {
-            fetch(`http://localhost:5000/purchasedSedan/All/${orderId}`, {
+            fetch(`https://sedan-mela-2-server.onrender.com/purchasedSedan/All/${orderId}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

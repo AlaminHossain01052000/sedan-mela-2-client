@@ -12,7 +12,7 @@ const MyOrders = () => {
     const email = user.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchasedSedan?email=${email}`)
+        fetch(`https://sedan-mela-2-server.onrender.com/purchasedSedan?email=${email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [email])

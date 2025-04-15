@@ -24,7 +24,7 @@ const AddReview = () => {
     const handleAddingReview = (e) => {
         e.preventDefault();
         const testimonial = { email: user.email, name: user.displayName, rating: review, description: description, company: { post: companyPost, name: companyName } };
-        fetch("http://localhost:5000/testimonials", {
+        fetch("https://sedan-mela-2-server.onrender.com/testimonials", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

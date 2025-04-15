@@ -9,7 +9,7 @@ const AllSedans = () => {
     const [clearAll,setClearAll]=useState(false)
     useEffect(() => {
 
-        fetch(`http://localhost:5000/sedans?${queryParams}`)
+        fetch(`https://sedan-mela-2-server.onrender.com/sedans?${queryParams}`)
             .then(response => response.json())
             .then(data => setSedans(data))
             .catch(error => console.error('Error fetching filtered sedans:', error));

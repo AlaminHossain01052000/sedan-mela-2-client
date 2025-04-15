@@ -30,25 +30,25 @@ const SedanFilter = ({ setQueryParams,clearAll,setClearAll }) => {
   },[clearAll,setClearAll])
   useEffect(() => {
     // Fetch unique engine options
-    fetch('http://localhost:5000/sedans/engines')
+    fetch('https://sedan-mela-2-server.onrender.com/sedans/engines')
       .then(response => response.json())
       .then(data => setEngineOptions(data))
       .catch(error => console.error('Error fetching engine options:', error));
 
     // Fetch unique gear options
-    fetch('http://localhost:5000/sedans/gears')
+    fetch('https://sedan-mela-2-server.onrender.com/sedans/gears')
       .then(response => response.json())
       .then(data => setGearOptions(data))
       .catch(error => console.error('Error fetching gear options:', error));
 
     // Fetch unique gearType options
-    fetch('http://localhost:5000/sedans/gearTypes')
+    fetch('https://sedan-mela-2-server.onrender.com/sedans/gearTypes')
       .then(response => response.json())
       .then(data => setGearTypeOptions(data))
       .catch(error => console.error('Error fetching gearType options:', error));
 
     // Fetch unique fuelType options
-    fetch('http://localhost:5000/sedans/fuelTypes')
+    fetch('https://sedan-mela-2-server.onrender.com/sedans/fuelTypes')
       .then(response => response.json())
       .then(data => setFuelTypeOptions(data))
       .catch(error => console.error('Error fetching fuelType options:', error));
