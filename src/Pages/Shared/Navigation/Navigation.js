@@ -61,13 +61,17 @@ const Navigation = () => {
                                 <Link to="/home">
                                     <Button>Home</Button>
                                 </Link>
-                                <Link to="/register">
+                                {
+                                    !user?.email&&
+                                    <Link to="/register">
                                     <Button >Register</Button>
 
-                                </Link>
+                                    </Link>
+                                }
+                                
 
                                 {
-                                    user.email ?
+                                    user?.email ?
                                         <Link to="/">
                                             <Button onClick={loggintOutUser}>Logout</Button>
 
@@ -81,7 +85,7 @@ const Navigation = () => {
 
 
 
-                                {user.email && <Link to="/dashboard">
+                                {user?.email && <Link to="/dashboard">
                                     <Button>Dashboard</Button>
 
                                 </Link>}

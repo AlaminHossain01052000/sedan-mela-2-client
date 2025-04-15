@@ -49,7 +49,7 @@ const AddReview = () => {
                 <textarea type="text" placeholder="Description" onChange={getDescription} name="description" rows="6" required />
                 <input type="text" onChange={getCompanyName} placeholder="Your Company's Name" required></input>
                 <input type="text" onChange={getCompanyPost} name="post" placeholder="Your Post in that company" required></input>
-                <select name="review" id="review" onChange={handleGetReview} required>
+                <select className="add-review-stars" name="review" id="review" onChange={handleGetReview} required>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -57,7 +57,7 @@ const AddReview = () => {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <input className="btn-review" type="submit" value="Add Review" style={{ cursor: "pointer" }} />
+                <input className="btn-review" type="submit" value="Add Review"/>
             </form>
         </div >
     );

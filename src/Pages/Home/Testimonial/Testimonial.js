@@ -7,7 +7,7 @@ const Testimonial = ({ testimonial }) => {
     const rated = parseInt(rating);
     return (
         <div style={{ margin: "50px 0 100px 0" }}>
-            <Card sx={{ width: 320, height: 400, backgroundColor: "#10ac84", marginRight: "10px", borderRadius: "10px", position: "relative" }} className="testimonial_card">
+            <Card sx={{ width: 320, height: 500, backgroundColor: "#B0E0E6", marginRight: "10px", borderRadius: "10px", position: "relative" }} className="testimonial_card">
                 <List>
                     <ListItem alignItems="flex-start">
                         <ListItemAvatar>

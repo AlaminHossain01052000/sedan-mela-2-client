@@ -87,7 +87,7 @@ function Dashboard(props) {
                     </ListItem>
 
                 </List>
-                <List>
+                {/* <List>
 
                     <ListItem button>
                         <Link to={`${path}/payment`}>Make Payment</Link>
@@ -95,7 +95,7 @@ function Dashboard(props) {
                         <ListItemText />
                     </ListItem>
 
-                </List>
+                </List> */}
                 <List>
 
                     <ListItem button>

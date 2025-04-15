@@ -1,74 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-.add-review-container{
+
+.add-review-container {
     width: 50%;
     text-align: center;
     margin: 0 auto;
-    
-  
+
+
 }
-.add-review-form{
+
+.add-review-form {
     margin: 0 auto;
     width: 75%;
-    background-color: #54a0ff;
+    background-color: rgb(0, 0, 0,0.7);
     padding: 15px;
 }
-.add-review-form input ,textarea,select{
-display: block;
-font-size: 16px;
 
-margin: 10px auto;
-padding: 15px 25px;
-background-color: #eee;
-border-radius: 5px;
-border:0px;
-color:blue;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-outline: 0px;
-transition: 0.6s;
-font-family: 'Montserrat', sans-serif;
+.add-review-form input,
+textarea,
+select {
+    display: block;
+    font-size: 16px;
+
+    margin: 10px auto;
+    padding: 15px 25px;
+    background-color: #eee;
+    border-radius: 5px;
+    border: 0px;
+    color: blue;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    outline: 0px;
+    transition: 0.6s;
+    font-family: 'Montserrat', sans-serif;
 }
-.add-review-form input:focus ,select:focus{
+
+.add-review-form input:focus,
+select:focus {
     padding: 15px 35px;
 }
-.add-review-form textarea:focus{
+
+.add-review-form textarea:focus {
+    width: 70%;
     padding: 15px 25px;
     font-size: 20px;
 }
 
+.add-review-form>.add-review-stars{
+    margin: auto;
+}
 
+.add-review-form>.btn-review {
+    background-color: #D16BA5; /* soft magenta */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(209, 107, 165, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+  }
+  
+  .add-review-form>.btn-review:hover {
+    background-color: #C75D9B; /* deeper magenta on hover */
+    box-shadow: 0 6px 16px rgba(199, 93, 155, 0.4);
+    transition: .5s;
+  }
 
-.btn-review {background-image: linear-gradient(to right, #780206 0%, #061161  51%, #780206  100%)}
-.btn-review {
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-  color:white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
-   display: block;
- }
-
- .btn-review:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
-@media only screen and (max-width:420px){
-    .add-review-container{
+@media only screen and (max-width:420px) {
+    .add-review-container {
         width: 100%;
     }
-    .add-review-form{
-        
+
+    .add-review-form {
+
         width: 100%;
-        
+
     }
-    .add-review-form input:focus ,select:focus{
+
+    .add-review-form input:focus,
+    select:focus {
         padding: 20px 25px;
     }
-    .add-review-form textarea:focus{
+
+    .add-review-form textarea:focus {
         padding: 20px 25px;
         font-size: 16px;
     }

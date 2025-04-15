@@ -58,7 +58,8 @@ const ViewOrder = ({ order }) => {
     }
     return (
         <Grid item lg={4} md={4} sm={12} xs={12}>
-            <Card sx={{ maxWidth: 345, padding: "15px" }}>
+            <div style={{width:"70%",margin: 'auto',}}>
+            <Card sx={{ maxWidth: 345,height:650, padding: "15px" }}>
                 <Box id="sedan-img-container">
                     <CardMedia
                         component="img"
@@ -95,7 +96,7 @@ const ViewOrder = ({ order }) => {
                 </CardContent>
                 {
                     order?.paymentStatus==='pending'&&
-                    <button className="btn-delete" onClick={handleDeletingOrder} style={{marginBottom:"10px",paddingBottom:"50px"}}>Delete</button>
+                    <button className="btn-soft-red" onClick={handleDeletingOrder} style={{marginBottom:"10px"}}>Delete</button>
                 }
                
                 <CardActions>
@@ -115,6 +116,8 @@ const ViewOrder = ({ order }) => {
 
                 </CardActions>
             </Card>
+            </div>
+            
 
             {/* ======modal start====== */}
             <div>

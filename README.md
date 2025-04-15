@@ -1,70 +1,111 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🚗 Sedan Mela
 
-## Available Scripts
+**Live Link:** _Live Link will be added later_
 
-In the project directory, you can run:
+**Sedan Mela** is a full-featured MERN stack web application for exploring, purchasing, and managing sedan cars. It includes both user and admin functionalities with secure authentication, Stripe payment integration, and a dynamic dashboard experience.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🌟 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👤 **User Functionality**
+- 🔍 View the home page with:
+  - Navigation Bar
+  - Featured Sedans (6)
+  - About Us
+  - Testimonials (User Reviews)
+  - Footer Section
+- 🛒 Click on **Purchase** → Redirects to **Login/Register** (via Email/Password or Google)
+- ✅ After Login:
+  - **User Email:** `john@gmail.com`  
+    **Password:** `123456`
+  - Purchase a sedan by entering address and phone number
+  - Explore sedans using filters:
+    - Engine
+    - Gear & Gear Type
+    - Fuel Type
+    - Price Range
+  - Access **User Dashboard**:
+    - 📦 **My Orders**: 
+      - Pay via Stripe
+      - Cancel/Delete if not paid
+    - ✍️ **Add a Review**
+    - 🚪 **Logout**
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔑 **Admin Functionality**
+- 👤 Admin Login:  
+  **Email:** `sheikh@gmail.com`  
+  **Password:** `123456`
+  
+- 🧰 Admin Dashboard:
+  - 🔧 **Make Admin** – Promote users by providing their email
+  - 📋 **Manage All Orders** – View & delete any order
+  - ➕ **Add Product** – Add new sedans with detailed descriptions
+  - 🗃️ **Manage All Products** – Delete or manage all sedan entries
+  - 🚪 **Logout**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Frontend       | Backend      | Authentication | Payment |
+|----------------|--------------|----------------|---------|
+| React.js       | Express.js   | Firebase Auth  | Stripe  |
+| Material UI    | MongoDB      | Google Sign-In |         |
+| React Router   |              |                |         |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🔗 Project Repositories
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 🧩 **Frontend Code:** [GitHub - sedan-mela-2-client](https://github.com/AlaminHossain01052000/sedan-mela-2-client)  
+- 🔧 **Backend Code:** [GitHub - sedan-mela-2-server](https://github.com/AlaminHossain01052000/sedan-mela-2-server)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧪 Test the App Locally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/AlaminHossain01052000/sedan-mela-2-client
+   git clone https://github.com/AlaminHossain01052000/sedan-mela-2-server
+   ```
 
-## Learn More
+2. Navigate to client and install dependencies:
+   ```bash
+   cd sedan-mela-2-client
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Set up your server:
+   ```bash
+   cd ../sedan-mela-2-server
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Create `.env` files for both client and server with the necessary environment variables (MongoDB URI, Stripe keys, Firebase config, etc.)
 
-### Code Splitting
+5. Run both servers:
+   ```bash
+   # In one terminal for backend
+   nodemon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   # In another terminal for frontend
+   npm start
+   ```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 💬 Feedback
 
-### Making a Progressive Web App
+Found a bug or want to contribute? Open an [issue](https://github.com/AlaminHossain01052000/sedan-mela-2-client/issues) or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -62,7 +62,7 @@ const AddAProduct = () => {
 
 
                 <button className="btn-add" type="submit" >Add Product</button>
-                <p className="mt-5 mb-3 text-muted">&copy; 2023–2024</p>
+                <p className="mt-5 mb-3 text-muted">&copy; 2025–2026</p>
             </form>
 
 

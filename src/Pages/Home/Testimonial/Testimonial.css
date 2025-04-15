@@ -1,5 +1,14 @@
-.testimonial_card{
+.testimonial_card {
+  border: 1px solid #A8C4D8; /* slightly deeper tone of B0E0E6 */
+  background-color: #B0E0E6;  /* soft blue background */
+  border-radius: 10px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
+.testimonial_card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 @media only screen and (max-width: 400px) {
     .testimonial_card {

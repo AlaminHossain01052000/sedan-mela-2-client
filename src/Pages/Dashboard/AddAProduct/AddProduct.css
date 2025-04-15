@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
 .add-product-form{
-    background-color:#0abde3;
+    background-color:rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -35,6 +35,7 @@
 
 .btn-add {background-image: linear-gradient(to right, #fe8c00 0%, #f83600  51%, #fe8c00  100%)}
 .btn-add {
+    line-height: 1;
    margin: 10px auto;
    padding: 10px 25px;
    text-align: center;

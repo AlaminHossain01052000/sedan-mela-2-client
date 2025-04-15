@@ -7,6 +7,10 @@
     background-color: #B53471;
 }
 
+#nav-links button{
+box-shadow: none;
+
+}
 #nav-links a:hover{
 background-color: #30336b;
 border-radius: 5px;

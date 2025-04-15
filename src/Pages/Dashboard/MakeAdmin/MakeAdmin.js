@@ -29,9 +29,9 @@ const MakeAdmin = () => {
 
                 <div className="row mb-1">
                     <div className="col">
-                        <label className="form-label" style={{ fontSize: "20px", fontWeight: 500 }}>Email : </label>
+                        
                         <input
-                            style={{ padding: "15px", border: 0, backgroundColor: "#eee", color: "blue", fontSize: "16px" }}
+                            style={{ padding: "15px", border: 0, backgroundColor: "#eee", color: "blue", fontSize: "16px",marginInline:'auto',marginTop:"20px" }}
                             type="email"
                             name="email"
                             class="form-control"
@@ -44,7 +44,7 @@ const MakeAdmin = () => {
 
 
                     <button
-                        style={{ marginTop: "20px", padding: "10px 25px", border: "0px", backgroundColor: "#ff7979", color: "white", fontWeight: "500", borderRadius: "10px", cursor: "pointer" }}
+                        style={{ marginTop: "20px", padding: "10px 25px", border: "0px", backgroundColor: "#ff7979", color: "white", fontWeight: "500", borderRadius: "10px", cursor: "pointer",lineHeight:1 }}
                         type="submit"
                         class="btn btn-primary mt-2">
                         Submit

@@ -2,10 +2,11 @@ import { Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import Testimonial from '../Testimonial/Testimonial';
+import "./Testimonials.css"
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
     var settings = {
-        dots: true,
+        // dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -20,7 +21,7 @@ const Testimonials = () => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
+                    // dots: true
                 }
             },
             {
