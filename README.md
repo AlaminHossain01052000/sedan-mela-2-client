@@ -1,7 +1,7 @@
 
 # 🚗 Sedan Mela
 
-**Live Link:** _Live Link will be added later_
+**Live Link:** _[Live Link](https://sedan-mela.netlify.app/)_
 
 **Sedan Mela** is a full-featured MERN stack web application for exploring, purchasing, and managing sedan cars. It includes both user and admin functionalities with secure authentication, Stripe payment integration, and a dynamic dashboard experience.
 
